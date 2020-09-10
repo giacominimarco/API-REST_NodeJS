@@ -15,7 +15,7 @@ export const Container = styled.div`
         color: var(--primary-color);
     }
 
-    .user {     
+    .doctor {     
         align-items: center;
         display: grid;
         border: 1px solid gray;
@@ -24,27 +24,27 @@ export const Container = styled.div`
         border-radius: 8px;
     }
 
-    .user form {
+    .doctor form {
         padding: 40px 50px 40px 50px;
         display: grid;
         grid-template-columns: 1fr solid;
         border-radius: 8px;
     }
 
-    .user form label {
+    .doctor form label {
         width: 100%;
         display: grid;
         color: var(--form-label);
     }
 
-    .user input {
+    .doctor input {
         margin-top: 10px;
         margin-bottom: 10px;
         color: var(--header-color);
         background-color: rgb(239, 239, 239);
     }
 
-    .user .buttons {
+    .doctor .buttons {
         margin-top: 40px;
 
         display: grid;

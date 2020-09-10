@@ -7,63 +7,63 @@ import { Alert, AlertTitle } from "@material-ui/lab";
 
 export default function Profile() {
     const { id } = useParams();
-    const [user, setUser] = useState([]);
-    const [updateName, setUpdateName] = useState(user.name);
-    const [updateEmail, setUpdateEmail] = useState(user.email);
+    const [doctor, setDoctor] = useState([]);
+    const [updateName, setUpdateName] = useState(doctor.name);
+    const [updateCrm, setUpdateCrm] = useState(doctor.crm);
     const history = useHistory();
     const [number, setNumber] = useState([0, ""]);
 
     useEffect(() => {
-        const userId = id;
+        const doctorId = id;
         async function load() {
-            const response = await api.get(`user/${userId}`);
-            setUser(response.data.user);
+            const response = await api.get(`doctor/${doctorId}`);
+            setDoctor(response.data.doctor);
         }
         load();
     }, [id]);
 
-    async function handleEditUser(event) {
+    async function handleEditDoctor(event) {
         event.preventDefault();
         const data = {
             name: updateName,
-            email: updateEmail,
+            crm: updateCrm,
         };
         try {
-            await api.put(`/user/${id}`, data);
+            await api.put(`/doctor/${id}`, data);
             setNumber([1, "Usuário editado com sucesso!"]);
-            history.push('/userlist')
+            history.push('/doctorlist')
         } catch (error) {
             setNumber([2, error.response.data.errors[0].message]);
         }
     }
-    async function handleCancelUser() {
-        history.push("/userList");
+    async function handleCancelDoctor() {
+        history.push("/doctorList");
     }
 
     return (
         <Container>
             <h1>
-                Edição de <span>Usuário</span>
+                Edição de <span>médico</span>
             </h1>
 
-            <div className="user">
-                <form onSubmit={handleEditUser}>
+            <div className="doctor">
+                <form onSubmit={handleEditDoctor}>
                     <label>
                         Nome:
                         <input
-                            defaultValue={user.name}
+                            defaultValue={doctor.name}
                             onChange={(event) => setUpdateName(event.target.value)}
                         />
                     </label>
                     <label>
-                        E-mail:
+                        CRM:
                         <input
-                            defaultValue={user.email}
-                            onChange={(event) => setUpdateEmail(event.target.value)}
+                            defaultValue={doctor.crm}
+                            onChange={(event) => setUpdateCrm(event.target.value)}
                         />
                     </label>
                     <div className="buttons">
-                        <button onClick={(event) => handleCancelUser()}>Cancelar</button>
+                        <button onClick={(event) => handleCancelDoctor()}>Cancelar</button>
                         <button type="submit">Enviar</button>
                     </div>
                 </form>

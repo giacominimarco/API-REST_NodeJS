@@ -22,21 +22,21 @@ export const Container = styled.div`
     background-color: blue;
   }
 
-  .list-users {
+  .list-doctors {
     display: grid;
     width: 70%;
     height: 70%;
     margin-bottom: 70px;
   }
 
-  .user {
+  .doctor {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     padding: 1em;
     text-align: left;
   }
 
-  .user button {
+  .doctor button {
     height: 0;
     width: 0;
     border: none;
@@ -46,13 +46,13 @@ export const Container = styled.div`
     font-size: 20px;
   }
 
-  .user .icons-cards {
+  .doctor .icons-cards {
     height: 25px;
     text-align: right;
     position: relative;
   }
 
-  .user .icons-cards .icon-edit {
+  .doctor .icons-cards .icon-edit {
     font-size: 20px;
     margin-right: 10px;
   }
@@ -70,29 +70,29 @@ export const Container = styled.div`
     color: var(--button-editkey-hover);
   }
 
-  .user button:hover {
+  .doctor button:hover {
     color: var(--button-delit-hover);
   }
 
-  .info-user {
+  .info-doctor {
     margin-top: -18%;
     display: grid;
     align-items: center;
   }
 
-  .info-user p {
+  .info-doctor p {
     display: flex;
     align-items: center;
     padding: 5px 0 5px;
   }
 
-  .info-user div {
+  .info-doctor div {
     display: flex;
     align-items: center;
     padding: 5px 0 5px;
   }
 
-  .info-user span {
+  .info-doctor span {
     border-top: 1px solid #d4d4d4;
   }
 
