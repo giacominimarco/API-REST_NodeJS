@@ -3,7 +3,7 @@ import Main from "../../components/Main";
 import Navigation from "../../components/Navigation";
 import Footer from "../../components/Footer";
 
-class Userlist extends Component {
+class Doctorlist extends Component {
   render() {
     return (
       <>
@@ -15,4 +15,4 @@ class Userlist extends Component {
   }
 }
 
-export default Userlist;
+export default Doctorlist;

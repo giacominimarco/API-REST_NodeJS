@@ -8,7 +8,7 @@ import {
 
 import SignUp from "./pages/signup";
 import Profile from "./pages/profile";
-import Userlist from "./pages/userlist";
+import Doctorlist from "./pages/doctorlist";
 
 const Routes = () => (
   <BrowserRouter>
@@ -17,7 +17,7 @@ const Routes = () => (
       <Route path={`/Profile/:id`}>
         <Profile />
       </Route>
-      <Route path="/userlist" component={Userlist} />
+      <Route path="/doctorlist" component={Doctorlist} />
       <Route path="*" component={() => <h1>Page not found</h1>} />
     </Switch>
   </BrowserRouter>
