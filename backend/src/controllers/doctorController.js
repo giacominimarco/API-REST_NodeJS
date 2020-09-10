@@ -2,17 +2,14 @@ const Doctors = require("../models/Doctor");
 
 module.exports = {
   //Função para pesquisar todos os usuários do banco de dados
-
   async index(req, res) {
-
     const doctors = await Doctors.findAll();
-    console.log(doctors);
     return res.status(200).send({ doctors: doctors });
   },
+  
   //Função para pesquisar um usuário específico do banco de dados
   async indexOne(req, res) {
     const { id } = req.params;
-    console.log(id);
     const doctor = await Doctors.findOne({
       where: {
         id: id,
