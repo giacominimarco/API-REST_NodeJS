@@ -3,15 +3,18 @@
 # Criando uma API REST com NodeJS. 
 - CRUD de usuário; 
 - Listagem de usuário; 
-- Interface para consomir a API;
+- Interface para consumir a API;
 
 # Primeiros passos 
-Crie seu arquivo .env a partir do .envsample
+- Criar seu arquivo .env a partir do .envsample;
 
-# Iniciando
-- dar o comando yarn na pasta Backend e Frontend;
+# Baixando as dependencias do sistema
+- Dar o comando yarn na pasta Backend e Frontend;
+
+# Banco de dados do sistema
+- Criar a database no MySQL;
 
 # Para configurar o banco de dados do sistema
-Na pasta Backend
+Na pasta Backend:
 1) dar o comando: yarn sequelize db:create
 2) dar o comando: yarn sequelize db:migrate
