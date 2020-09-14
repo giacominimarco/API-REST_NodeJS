@@ -7,6 +7,8 @@ class Doctor extends Model {
 			name: {
 				type: DataTypes.STRING,
 				allowNull: false,
+				onUpdate: 'CASCADE',
+        onDelete: 'CASCADE',
 				validate: {
 					notEmpty: {
 						msg: "Preencha o campo com um nome válido"
@@ -21,6 +23,8 @@ class Doctor extends Model {
 				type: {
 					type: DataTypes.INTEGER,
 					allowNull: false,
+					onUpdate: 'CASCADE',
+        	onDelete: 'CASCADE',
 					validate: {
 						notEmpty: {
 							msg: "Preencha o campo com um CRM válido"
@@ -31,6 +35,8 @@ class Doctor extends Model {
 			phone: {
 				type: DataTypes.STRING,
 				allowNull: false,
+				onUpdate: 'CASCADE',
+        onDelete: 'CASCADE',
 				validate: {
 					notEmpty: {
 						msg: "Coloque um telefone"

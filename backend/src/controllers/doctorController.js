@@ -1,18 +1,16 @@
 const Doctors = require("../models/Doctor");
-
+const DS = require("../models/Doctor_Specialtie");
+const Specialtie = require("../models/Specialtie");
 module.exports = {
   //Função para pesquisar todos os usuários do banco de dados
-
   async index(req, res) {
-
     const doctors = await Doctors.findAll();
-    console.log(doctors);
     return res.status(200).send({ doctors: doctors });
   },
+  
   //Função para pesquisar um usuário específico do banco de dados
   async indexOne(req, res) {
     const { id } = req.params;
-    console.log(id);
     const doctor = await Doctors.findOne({
       where: {
         id: id,
@@ -42,9 +40,16 @@ module.exports = {
       }))
 
         return res.status(422).send({ message: 'CRM duplicado' });
-
+      
+      const { id } = req.params;
       const doctor = await Doctors.create({ name, crm, phone });
-      return res.status(200).json(doctor);
+      const specialtie = await Specialtie.findAll({
+        where: {
+          id: id,
+        },
+      })
+      const docSpecialtie = await DS.create({ doctor, specialtie });
+      return res.status(200).json({doctor, docSpecialtie});
 
     } catch (err) {
       return res.status(422).json(err);

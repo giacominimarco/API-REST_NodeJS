@@ -2,14 +2,11 @@
   margin: 0 auto 70px;
   background: var(--primary-color);
   padding: 16px 64px;
-  display: grid;
-  grid-template-columns: 0.5fr 1fr;
   grid-gap: 40px;
   align-items: center;
   border-radius: 6px;
   transition: all 300ms;
-
-  width: 50%;
+  width: 40%;
 }
 
 .form h2 {
@@ -19,6 +16,7 @@
 }
 
 form input,
+form select,
 form button {
   width: 100%;
   padding: 10px 16px;
@@ -28,6 +26,7 @@ form button {
   font-size: 15px;
 }
 
+/* form select, */
 form input {
   color: white;
   background: transparent;
@@ -37,14 +36,12 @@ form input::placeholder {
   color: #ffffffaa;
 }
 
+form select,
 form button {
   font-weight: bold;
   cursor: pointer;
 }
 
-.hide {
-  opacity: 0;
-  visibility: hidden;
-  height: 0;
-  margin-top: -70px;
+form button:hover {
+  opacity: 93%;
 }
