@@ -48,7 +48,6 @@ export default function Main() {
 		}
 	}
 	let i = 0;
-	console.log(doctors);
 	return (
 		<Container>
 			<h1>

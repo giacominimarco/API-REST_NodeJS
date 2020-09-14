@@ -1,11 +1,17 @@
 const { Model, DataTypes } = require('sequelize');
 
 //É o objeto que está pegando as informações do usuário e está armazenando no banco;
-class Specialtie extends Model {
+class Doctor_Sequelize extends Model {
 	static init(sequelize) {
 		super.init({
-			name: {
-				type: DataTypes.STRING,
+			doctorId: {
+				type: DataTypes.INTEGER,
+				allowNull: false,
+				onUpdate: 'CASCADE',
+        onDelete: 'CASCADE',
+			},
+			specialtieId: {
+				type: DataTypes.INTEGER,
 				allowNull: false,
 				onUpdate: 'CASCADE',
         onDelete: 'CASCADE',
@@ -15,4 +21,4 @@ class Specialtie extends Model {
 		})
 	}
 }
-module.exports = Specialtie;
+module.exports = Doctor_Sequelize;
